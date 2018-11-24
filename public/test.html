@@ -1,4 +1,19 @@
-<script src="client.js"></script>
-
+<head>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css' rel='stylesheet' />
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<style>
+        body { margin:0; padding:0; }
+        #map {position:absolute;top:100; bottom:0; width:100%; }
+    </style>
+</head>
+<body>
 test h
 <button onclick="fnc()">Click Me!</button>
+  Physician Name:<br>
+  <input type="text" name="name" id="textfield"><br>
+<button onclick="submit()">Submit</button>
+<div id='map'></div>
+<script src="client.js"></script>
+</body>

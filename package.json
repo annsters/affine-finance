@@ -9,6 +9,7 @@
   "author": "Annie Lu",
   "license": "ISC",
   "dependencies": {
+    "@mapbox/mapbox-sdk": "^0.4.1",
     "cors": "^2.8.5",
     "csv-parse": "^4.0.1",
     "express": "^4.16.4",

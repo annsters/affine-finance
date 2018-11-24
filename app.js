@@ -5,6 +5,7 @@ var parse = require('csv-parse');
 var parseString = require('xml2js').parseString;
 var fs = require('fs');
 var request = require('request');
+var data=require("./latlong.json")
 var MongoClient= require('mongodb').MongoClient,format = require('util').format;
 MongoClient.connect('mongodb://127.0.0.1:27017', function(err,db){
   if(err){
@@ -33,11 +34,51 @@ console.log("App started on port " + port);
 // server.listen(port,hostname, ()=>{
 //   console.log('Server started on port '+port);
 // });
+app.get('/input',function(req,res){
+  console.log(req.query['name'])
+  console.log(data)
+  console.log(data[req.query['name']])
+  res.send(JSON.stringify(data[req.query['name']]))
+})
+
+//
+// map.on('load', function () {
+//
+//     map.addLayer({
+//         "id": "points",
+//         "type": "symbol",
+//         "source": {
+//             "type": "geojson",
+//             "data": {
+//                 "type": "FeatureCollection",
+//                 "features": [{
+//                     "type": "Feature",
+//                     "geometry": {
+//                         "type": "Point",
+//                         "coordinates": [data[req.query['name']]['lat'], data[req.query['name']]['long']]
+//                     },
+//                     "properties": {
+//                         "title": "Mapbox DC",
+//                         "icon": "monument"
+//                     }
+//                 }]
+//             }
+//         },
+//         "layout": {
+//             "icon-image": "{icon}-15",
+//             "text-field": "{title}",
+//             "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+//             "text-offset": [0, 0.6],
+//             "text-anchor": "top"
+//         }
+//     });
+// });
+
 var namecoord={}
 let addresses = []
 app.get('/loadCSV',function(req,res){
     console.log('request recieved')
-    var inputFile='Book2.csv';
+    var inputFile='twohundred.csv';
     console.log("Processing Countries file");
     var parser = parse({ quote: '"', ltrim: true, rtrim: true, delimiter: ',' }, function(err,data){
       console.log(err)
@@ -74,10 +115,19 @@ app.get('/loadCSV',function(req,res){
         dictlatlong["long"]=result['usgeocoder']['geo_info'][0]['longitude'][0]
         namecoord[addresses[i]["name"]]=dictlatlong
         console.log(namecoord)
+        var json=JSON.stringify(namecoord);
+        fs.writeFile('latlong.json',json,'utf8',function(){
+          console.log("one record added")
+        });
       }
       })
     })
-  }})
+  }
+
+})
+
+
+
     fs.createReadStream(inputFile).pipe(parser);
 
     // Http.open("GET",url);
