@@ -24,40 +24,7 @@ function submit()
       if (Http.status == 200) {
         var coords=JSON.parse(Http.response)
         console.log(Http.response)
-          // Do something with the retrieved data ( found in xmlhttp.response )
-    //       map.addLayer({
-    //          "id": "points",
-    //          "type": "symbol",
-    //          "source": {
-    //              "type": "geojson",
-    //              "data": {
-    //                  "type": "FeatureCollection",
-    //                  "features": [{
-    //                      "type": "Feature",
-    //                      "geometry": {
-    //                          "type": "Point",
-    //                          "coordinates": [parseFloat(coords["lat"]), parseFloat(coords["long"])]
-    //                      },
-    //                      "properties": {
-    //                          "title": name,
-    //                          "icon": "monument"
-    //                      }
-    //                  }, ]
-    //              }
-    //          },
-    //          "layout": {
-    //              "icon-image": "{icon}-15",
-    //              "text-field": "{title}",
-    //              "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
-    //              "text-offset": [0, 0.6],
-    //              "text-anchor": "top"
-    //          }
-    //      });
-    //   } else {
-    //     console.log('broken')
-    //   }
-    // }
-  //}
+
     map.addLayer({
        "id": name + "-point",
        "type": "symbol",
