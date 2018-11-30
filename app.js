@@ -7,14 +7,20 @@ var fs = require('fs');
 var request = require('request');
 var data=require("./latlong.json")
 var MongoClient= require('mongodb').MongoClient,format = require('util').format;
-MongoClient.connect('mongodb://127.0.0.1:27017', function(err,db){
-  if(err){
-    throw err;
-  } else{
-    console.log("connected");
-  }
-  db.close();
-});
+// var mongodb = require("mongodb");
+// mongodb.MongoClient.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/test", function (err, client) {
+//   if (err) {
+//     console.log(err);
+//     process.exit(1);
+//   }
+// MongoClient.connect('mongodb://127.0.0.1:27017', function(err,db){
+//   if(err){
+//     throw err;
+//   } else{
+//     console.log("connected");
+//   }
+//   db.close();
+// });
 const hostname= '127.0.0.1';
 
 const server = http.createServer((req,res)=>{
@@ -22,6 +28,7 @@ const server = http.createServer((req,res)=>{
   res.setHeader('Content-type','text/plain');
   res.end('Hello World');
 });
+
 var app=express();
 
 app.use(cors())
