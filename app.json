@@ -1,8 +1,8 @@
 {
   "name":"Affine-Finance",
-  "description": "A Physician Mapping Web Program"
+  "description": "A Physician Mapping Web Program",
   "repository": "https://github.com/annsters/affine-finance",
-  "logo": "http//affinefinance.herokuapp.com/node.svg"
-  "keywords": ["node","express","static"]
+  "logo": "http//affinefinance.herokuapp.com/node.svg",
+  "keywords": ["node","express","static"],
   "image": "heroku/nodejs"
 }
