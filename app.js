@@ -32,22 +32,22 @@ const server = http.createServer((req,res)=>{
 
 var app=express();
 
-// app.use(cors())
-// const port = process.env.PORT || 80;
-// app.use(express.static('public'))
-// app.listen(port);
-// console.log("App started on port " + port);
-
-let port = process.env.PORT;
-if (port == null || port == "") {
-  port = 8000;
-}
+app.use(cors())
+const port = process.env.PORT || 80;
+app.use(express.static('public'))
 app.listen(port);
+console.log("App started on port " + port);
 
-app.get('/input',function(req,res){
-
-  res.send(JSON.stringify(data[req.query['name']]))
-})
+// let port = process.env.PORT;
+// if (port == null || port == "") {
+//   port = 8000;
+// }
+// app.listen(port);
+//
+// app.get('/input',function(req,res){
+//
+//   res.send(JSON.stringify(data[req.query['name']]))
+// })
 
 
 var namecoord={}
