@@ -6,7 +6,7 @@ var parseString = require('xml2js').parseString;
 var fs = require('fs');
 var request = require('request');
 var data=require("./latlong.json")
-var MongoClient= require('mongodb').MongoClient,format = require('util').format;
+// var MongoClient= require('mongodb').MongoClient,format = require('util').format;
 // var mongodb = require("mongodb");
 // mongodb.MongoClient.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/test", function (err, client) {
 //   if (err) {
