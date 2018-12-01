@@ -23,6 +23,7 @@ var data=require("./latlong.json")
 // });
 
 const hostname= '127.0.0.1';
+const path=require('path')
 
 const server = http.createServer((req,res)=>{
   res.statusCode=200;
@@ -31,6 +32,9 @@ const server = http.createServer((req,res)=>{
 });
 
 var app=express();
+app.get('/',function(req,res){
+  res.sendFile(path.join(__dirname, 'public/test.html'))
+});
 
 app.use(cors())
 const port = process.env.PORT || 80;
