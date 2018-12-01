@@ -35,6 +35,10 @@ var app=express();
 app.get('/',function(req,res){
   res.sendFile(path.join(__dirname, 'public/test.html'))
 });
+app.get('/input',function(req,res){
+
+  res.send(JSON.stringify(data[req.query['name']]))
+})
 
 app.use(cors())
 const port = process.env.PORT || 80;
@@ -48,10 +52,7 @@ console.log("App started on port " + port);
 // }
 // app.listen(port);
 //
-// app.get('/input',function(req,res){
-//
-//   res.send(JSON.stringify(data[req.query['name']]))
-// })
+
 
 
 var namecoord={}

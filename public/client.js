@@ -1,4 +1,8 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiYW5uc3RlcnMiLCJhIjoiY2pvdXllODBwMWgyMDN0cGlmMjVwYnBqNyJ9.pPpGa4YC_onuauHoatHRXw';
+
+var root_url=window.location.hostname;
+console.log(root_url)
+
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v9',
@@ -9,15 +13,17 @@ function fnc()
 {
   console.log('hi')
   const Http=new XMLHttpRequest();
-  const url="http://localhost:80/loadCSV"
+  const url=root_url+"/loadCSV"
   Http.open("GET", url);
   Http.send()
 }
 function submit()
 {
   const Http=new XMLHttpRequest();
-  var name = document.getElementById('textfield').valueS
-  const url="https://affine--finance.herokuapp.com/input?name="+name
+  var name = document.getElementById('textfield').value
+
+  const url="/input?name="+name
+  console.log(url)
   Http.open("GET", url);
   Http.onreadystatechange = function() {
     if(Http.readyState == XMLHttpRequest.DONE) {
@@ -56,5 +62,5 @@ function submit()
   }
 }
 }
-Https.send()
+Http.send()
 }
