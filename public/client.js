@@ -15,12 +15,12 @@ function fnc()
 }
 function submit()
 {
-  const Http=new XMLHttpRequest();
+  const Http=new HttpRequest();
   var name = document.getElementById('textfield').value
   const url="http://affine--finance.herokuapp.com/input?name="+name
   Http.open("GET", url);
   Http.onreadystatechange = function() {
-    if(Http.readyState == XMLHttpRequest.DONE) {
+    if(Http.readyState == HttpRequest.DONE) {
       if (Http.status == 200) {
         var coords=JSON.parse(Http.response)
         console.log(Http.response)
