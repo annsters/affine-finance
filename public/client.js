@@ -20,7 +20,7 @@ function submit()
   const url="https://affine--finance.herokuapp.com/input?name="+name
   Http.open("GET", url);
   Http.onreadystatechange = function() {
-    if(Http.readyState == XLHttpRequest.DONE) {
+    if(Http.readyState == XMLHttpRequest.DONE) {
       if (Http.status == 200) {
         var coords=JSON.parse(Http.response)
         console.log(Http.response)
