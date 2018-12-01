@@ -17,7 +17,7 @@ function submit()
 {
   const Http=new XMLHttpRequest();
   var name = document.getElementById('textfield').value
-  const url="http://localhost:80/input?name="+name
+  const url="http://affine--finance.herokuapp.com/input?name="+name
   Http.open("GET", url);
   Http.onreadystatechange = function() {
     if(Http.readyState == XMLHttpRequest.DONE) {
