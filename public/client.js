@@ -16,11 +16,11 @@ function fnc()
 function submit()
 {
   const Http=new XMLHttpRequest();
-  var name = document.getElementById('textfield').value
+  var name = document.getElementById('textfield').valueS
   const url="https://affine--finance.herokuapp.com/input?name="+name
   Http.open("GET", url);
   Http.onreadystatechange = function() {
-    if(Http.readyState == ZMLHttpRequest.DONE) {
+    if(Http.readyState == XLHttpRequest.DONE) {
       if (Http.status == 200) {
         var coords=JSON.parse(Http.response)
         console.log(Http.response)
