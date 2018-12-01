@@ -21,6 +21,7 @@ var data=require("./latlong.json")
 //   }
 //   db.close();
 // });
+
 const hostname= '127.0.0.1';
 
 const server = http.createServer((req,res)=>{
@@ -31,11 +32,17 @@ const server = http.createServer((req,res)=>{
 
 var app=express();
 
-app.use(cors())
-const port = process.env.PORT || 80;
-app.use(express.static('public'))
+// app.use(cors())
+// const port = process.env.PORT || 80;
+// app.use(express.static('public'))
+// app.listen(port);
+// console.log("App started on port " + port);
+
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
 app.listen(port);
-console.log("App started on port " + port);
 
 app.get('/input',function(req,res){
 
