@@ -8,6 +8,4 @@ Physician Mapping Case Study
 Maps the location of a physician's practice on the map. Look up a specific physician's location by entering his name in the format First Middle Initial Last. Click Submit to identify where on the map he is located. 
 
 ## How to Use:
-In console, type "npm install" to install appropriate packages. 
-Then enter "node app.js".
-Go to localhost.test/html to test the code. 
+Go to https://affine--finance.herokuapp.com/ 
